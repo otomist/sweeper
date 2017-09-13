@@ -1,9 +1,9 @@
 //sweeper2.0
-sweeper = window.appController.minesweeper
-pId = sweeper.localPlayerId
-me = sweeper.getPlayer(pId)
+var sweeper = window.appController.minesweeper
+var pId = sweeper.localPlayerId
+var me = sweeper.getPlayer(pId)
 
-BLANK = 9,
+var BLANK = 9,
 BOMB = 0,
 FLAG = 16,
 BOMBHIT = 0,
@@ -33,14 +33,14 @@ getTileId = function(x,y)
 //returns if the tile is a flag or a hitbomb
 isPosDangerous = function(x,y)
 {
-	id = getTileId(x,y)
+	var id = getTileId(x,y)
 	return id == BOMBHIT || id > 11
 }
 
 //returns if the tile is a flag or a hitbomb
 isDangerous = function(obj)
 {
-	id = getTileId(obj.x,obj.y)
+	var id = getTileId(obj.x,obj.y)
 	//console.log("DANGER ID:",id)
 	//console.log(id == BOMBHIT || id > 11)
 	return id == BOMBHIT || id > 11
@@ -49,7 +49,7 @@ isDangerous = function(obj)
 //returns true if the tile is a proxy
 isProxy = function(x,y)
 {
-	id = getTileId(x,y)
+	var id = getTileId(x,y)
 	return id > 0 &&  id < 9
 }
 
@@ -58,7 +58,7 @@ isOutdated = function(x,y)
 {
 	if(isProxy(x,y))
 	{	
-	id = getTileId(x,y)
+	var id = getTileId(x,y)
 	console.log("(",x,y,")is:",id)
 	neighbors = getNeighbors(x,y)
 	nearbyDangers = neighbors.filter(isDangerous)
@@ -81,8 +81,8 @@ getHiddenNeighbors = function(x,y)
 
 snipe = function()
 {
-	w = sweeper.playGrid.width
-	h = sweeper.playGrid.height
+	var w = sweeper.playGrid.width
+	var h = sweeper.playGrid.height
 	for(i = 0; i < w; i++)
 		{
 			for(j = 0; j < h; j++)
