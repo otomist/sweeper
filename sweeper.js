@@ -59,16 +59,16 @@ isOutdated = function(x,y)
 	if(isProxy(x,y))
 	{	
 	var id = getTileId(x,y)
-	console.log("(",x,y,")is:",id)
+	//console.log("(",x,y,")is:",id)
 	neighbors = getNeighbors(x,y)
 	nearbyDangers = neighbors.filter(isDangerous)
-	console.log("neighbors_ filtered", nearbyDangers)
-	console.log("length: ", nearbyDangers.length)
+	//console.log("neighbors_ filtered", nearbyDangers)
+	//console.log("length: ", nearbyDangers.length)
 	return id == nearbyDangers.length
 	}
 	else
 	{	
-		console.log("not proxy")
+		//console.log("not proxy")
 	}
 }
 
@@ -102,16 +102,17 @@ snipe = function()
 								//for debugging
 								if(oldscore > me.points)
 								{
-									console.log("lost score at: ", obj, getTileId(obj.x, obj.y))
+									//console.log("lost score at: ", obj, getTileId(obj.x, obj.y))
 								}	
 								else if(oldscore == me.points)
 								{
-									console.log("no points gained:", obj, getTileId(obj.x, obj.y))
+									//console.log("no points gained:", obj, getTileId(obj.x, obj.y))
 								}
 								else
 								{
 									//console.log("", obj, getTileId(obj.x, obj.y))
 								}
+								//end of debugging
 							})
 							return true
 						}
